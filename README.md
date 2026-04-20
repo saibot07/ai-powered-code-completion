@@ -1,45 +1,58 @@
 # AI-Powered Code Completion
 
-This repository provides a simple Python tool for code autocompletion using OpenAI's GPT API. With the rise of advanced AI models like GPT-4, integrating intelligent coding assistance is a hot trend. This tool generates relevant code snippets based on your function headers or initial code.
+## Description
+Smart code completion by S.A.I.: an AI-driven, lightning-fast, and GPT-powered Python tool. It utilizes OpenAI's API to provide intelligent autocompletion for developers, enabling faster and error-free workflows.
 
 ## Features
-- Generates code completions for Python scripts.
-- Simple and lightweight.
-- Leverages OpenAI's API for completions.
+- AI-driven code completion using OpenAI's GPT API
+- Easy-to-use CLI for generating code
+- Python-first design
+- Containerized with Docker for easy deployment
+
+## Prerequisites
+- Python 3.9 or above
+- OpenAI API key (sign up at [OpenAI](https://platform.openai.com/signup/))
 
 ## Installation
-1. Clone the repository.
+1. Clone the repo:
    ```bash
-   git clone https://github.com/your_username/ai-powered-code-completion.git
+   git clone https://github.com/saibot07/ai-powered-code-completion.git
    cd ai-powered-code-completion
    ```
-2. Install the required dependencies.
+2. Install dependencies:
    ```bash
-   pip install openai
+   pip install -r requirements.txt
+   ```
+
+3. Set up your API key as an environment variable:
+   ```bash
+   export OPENAI_API_KEY=your_api_key_here
+   ```
+
+4. Run the app:
+   ```bash
+   python main.py
    ```
 
 ## Usage
-1. Add your OpenAI API key to the `OPENAI_API_KEY` environment variable.
-2. Run the `main.py` script with a partial code snippet as input:
+- Input a programming prompt or question when prompted.
+- Example prompt: `Write a Python function to check if a number is prime.`
+
+### Advanced Usage with Docker
+1. Build the Docker image:
    ```bash
-   python main.py "def greeting(name):"
+   docker build -t code-completion-ai .
    ```
-3. The tool will output a suggested code snippet.
+2. Run the Docker container:
+   ```bash
+   docker run -e OPENAI_API_KEY=your_api_key_here code-completion-ai
+   ```
 
-## Example Output
-Input:
-```python
-def greeting(name):
-```
-Output:
-```python
-def greeting(name):
-    return f"Hello, {name}!"
-```
-
-## Notes
-- Ensure you have an active OpenAI API key to use the tool.
-- This is a simple example for learning purposes, and further enhancements are encouraged!
+## Roadmap
+Future improvements:
+- Support for multiple programming languages
+- Web-based GUI
+- Additional configurations for engine selection
 
 ## License
-MIT License.
+MIT
